@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\modules">
+      <UniqueIdentifier>{5093a1f0-ed6b-47f5-8a06-b7f59d3d55b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\modules\process">
+      <UniqueIdentifier>{279feace-cdbe-4d2a-9c98-df5cb15b81b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\modules\dns_cache">
+      <UniqueIdentifier>{4a4d6937-77b3-4dfb-9960-855665cd45ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\modules\net_route">
+      <UniqueIdentifier>{a45d6a99-ffe0-483c-8270-e54064d877fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\modules\tcp_connection">
+      <UniqueIdentifier>{240feb47-20ee-4b3c-bff0-89687f2a58d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\modules\disk_volume">
+      <UniqueIdentifier>{2f3e3002-de1e-49ca-87a2-aa648916e9c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\modules\product">
+      <UniqueIdentifier>{f0cca590-19b5-4b9b-9ef6-b28252839355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\modules\ipaddress">
+      <UniqueIdentifier>{1f3cf85a-2d6d-4927-aa5f-67b637ed0a09}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="blowbeef.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WMIC.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="process.cpp">
+      <Filter>源文件\modules\process</Filter>
+    </ClCompile>
+    <ClCompile Include="modules.cpp">
+      <Filter>源文件\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="DNS_Cache.cpp">
+      <Filter>源文件\modules\dns_cache</Filter>
+    </ClCompile>
+    <ClCompile Include="NetRoute.cpp">
+      <Filter>源文件\modules\net_route</Filter>
+    </ClCompile>
+    <ClCompile Include="IPAddress.cpp">
+      <Filter>源文件\modules\ipaddress</Filter>
+    </ClCompile>
+    <ClCompile Include="NetTCPConnection.cpp">
+      <Filter>源文件\modules\tcp_connection</Filter>
+    </ClCompile>
+    <ClCompile Include="DISK_Volume.cpp">
+      <Filter>源文件\modules\disk_volume</Filter>
+    </ClCompile>
+    <ClCompile Include="Product.cpp">
+      <Filter>源文件\modules\product</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WMIC.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="process.h">
+      <Filter>源文件\modules\process</Filter>
+    </ClInclude>
+    <ClInclude Include="modules.h">
+      <Filter>源文件\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="DNS_Cache.h">
+      <Filter>源文件\modules\dns_cache</Filter>
+    </ClInclude>
+    <ClInclude Include="NetRoute.h">
+      <Filter>源文件\modules\net_route</Filter>
+    </ClInclude>
+    <ClInclude Include="IPAddress.h">
+      <Filter>源文件\modules\ipaddress</Filter>
+    </ClInclude>
+    <ClInclude Include="NetTCPConnection.h">
+      <Filter>源文件\modules\tcp_connection</Filter>
+    </ClInclude>
+    <ClInclude Include="DISK_Volume.h">
+      <Filter>源文件\modules\disk_volume</Filter>
+    </ClInclude>
+    <ClInclude Include="Product.h">
+      <Filter>源文件\modules\product</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

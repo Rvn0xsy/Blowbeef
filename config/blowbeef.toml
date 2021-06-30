@@ -1,0 +1,62 @@
+[Process]
+description = "进程列表"
+wmi_namespace = "root\\cimv2"
+wmi_query = "select * from win32_process"
+wmi_query_key = ["Name","Handle"]
+filter_key = "Name"
+filter = ["atiesrxx.exe","cmd.exe","chrome.exe"]
+
+[DNS_Cache]
+description  = "DNS缓存"
+wmi_namespace = "Root\\StandardCimv2"
+wmi_query = "select * from MSFT_DNSClientCache"
+wmi_query_key = ["Data","Name"]
+filter_key = "Name"
+filter = ["login.live.com"]
+
+[DNS_Server]
+description  = "DNS服务器地址"
+wmi_namespace = "Root\\StandardCimv2"
+wmi_query = "select * from MSFT_DNSClientServerAddress"
+
+[Net_Route]
+description  = "网络路由"
+wmi_namespace = "Root\\StandardCimv2"
+wmi_query = "select * from MSFT_NetRoute"
+wmi_query_key = ["DestinationPrefix","InterfaceAlias"]
+filter_key = "DestinationPrefix"
+filter = [""]
+
+
+[Net_IPAddress]
+description  = "IP地址"
+wmi_namespace = "Root\\StandardCimv2"
+wmi_query = "select * from MSFT_NetIPAddress"
+wmi_query_key = ["InterfaceAlias","IPAddress"]
+filter_key = "IPAddress"
+filter = [""]
+
+
+[Net_TCPConnection]
+description  = "TCP连接状态"
+wmi_namespace = "Root\\StandardCimv2"
+wmi_query = "select * from MSFT_NetTCPConnection"
+wmi_query_key = ["LocalAddress","LocalPort","RemoteAddress","RemotePort","OwningProcess"]
+filter_key = "LocalPort"
+filter = ["445"]
+
+[DISK_Volume]
+description  = "磁盘状态"
+wmi_namespace = "ROOT\\CIMV2"
+wmi_query = "select * from Win32_Volume"
+wmi_query_key = ["Name","BootVolume","Label"]
+filter_key = "Name"
+filter = ["C:\\"]
+
+[Win32Product]
+description  = "安装软件列表"
+wmi_namespace = "ROOT\\CIMV2"
+wmi_query = "select * from Win32_Product"
+wmi_query_key = ["Name","InstallSource"]
+filter_key = "Name"
+filter = ["VMWare Workstation"]
