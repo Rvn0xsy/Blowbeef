@@ -7,6 +7,8 @@
 #include <comutil.h>
 #include <locale>
 #include <codecvt>
+#include "BlowbeefType.h"
+
 
 #pragma comment(lib, "wbemuuid.lib")
 #pragma comment(lib, "comsupp.lib")
@@ -20,13 +22,7 @@ struct WMI_STRUCT {
     ULONG uReturn = 0;
 };
 
-struct TableData
-{
-    int FieldsNum;
-    int RowsNum;
-    std::vector<std::string> Fields;
-    std::vector<std::vector<std::string>> Data;
-};
+
 
 class WMIQueryer {
 public:

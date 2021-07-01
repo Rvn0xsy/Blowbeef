@@ -12,6 +12,7 @@ class Modules
 		VOID Query();
 		VOID HandleData();
 		VOID Release();
+		TableData* GetData();
 	protected:
 		int GetFilterKeyIndex();
 		WMIQueryer* Queryer;
@@ -22,6 +23,7 @@ class Modules
 		std::string moduleWMIQuery;
 		std::string moduleWMINameSpace;
 		std::string moduleWMIFilterKey;
+		std::string moduleWMIDescription;
 		std::vector<std::string> moduleWMIKey;
 		std::vector<std::string> moduleWMIFilter;
 		TableData * moduleQueryResultData;
