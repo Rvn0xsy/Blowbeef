@@ -36,6 +36,7 @@ public:
     BOOL WMIShowData(std::vector<std::string> Fields);
     BOOL WMIShowTableData(TableData* Data);
     TableData * WMIGetData(std::vector<std::string> Fields, TableData * Data);
+    VOID Release();
     ~WMIQueryer();
 private:
     struct WMI_STRUCT* WmiObj;

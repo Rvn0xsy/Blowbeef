@@ -60,3 +60,11 @@ wmi_query = "select * from Win32_Product"
 wmi_query_key = ["Name","InstallSource"]
 filter_key = "Name"
 filter = ["VMWare Workstation"]
+
+[QuickFixEngineering]
+description  = "ÏµÍ³²¹¶¡"
+wmi_namespace = "ROOT\\CIMV2"
+wmi_query = "select * from Win32_QuickFixEngineering"
+wmi_query_key = ["HotFixID","InstalledOn"]
+filter_key = "HotFixID"
+filter = [""]

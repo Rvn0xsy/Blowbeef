@@ -10,6 +10,7 @@
 #include "NetTCPConnection.h"
 #include "Disk_Volume.h"
 #include "Product.h"
+#include "QuickFixEngineering.h"
 
 INITIALIZE_EASYLOGGINGPP
 
@@ -23,6 +24,7 @@ enum class ModuleType
     Net_TCPConnection,
     DISK_Volume,
     PRODUCT,
+    QUICK_FIX_ENGINEERING,
 };
 
 int main(int argc, char** argv)
@@ -42,6 +44,7 @@ int main(int argc, char** argv)
         {"Net_IPAddress", ModuleType::Net_IPAddress} ,
         {"Net_TCPConnection", ModuleType::Net_TCPConnection} ,
         {"DISK_Volume", ModuleType::DISK_Volume} ,
+        {"Quick_Fix", ModuleType::QUICK_FIX_ENGINEERING}
     };
 
     ModuleType moduleType;
@@ -59,24 +62,35 @@ int main(int argc, char** argv)
     NetTCPConnection* Net_TCPConnection = new NetTCPConnection(tomlConfigFile);
     DISK_Volume* Disk_Volume = new DISK_Volume(tomlConfigFile);
     Product* Win32_Product = new Product(tomlConfigFile);
+    QuickFixEngineering* Win32QuickFix = new QuickFixEngineering(tomlConfigFile);
 
     switch (moduleType)
     {
     case ModuleType::All:
         Pr->Query();
         Pr->HandleData();
+        Pr->Release();
         DnsCache->Query();
         DnsCache->HandleData();
+        DnsCache->Release();
         Win32_Product->Query();
         Win32_Product->HandleData();
+        Win32_Product->Release();
         Net_Route->Query();
         Net_Route->HandleData();
+        Net_Route->Release();
         Net_IPAddress->Query();
         Net_IPAddress->HandleData();
+        Net_IPAddress->Release();
         Net_TCPConnection->Query();
         Net_TCPConnection->HandleData();
+        Net_TCPConnection->Release();
         Disk_Volume->Query();
         Disk_Volume->HandleData();
+        Disk_Volume->Release();
+        Win32QuickFix->Query();
+        Win32QuickFix->HandleData();
+        Win32QuickFix->Release();
         break;
     case ModuleType::PROCESS:
         Pr->Query();
@@ -105,6 +119,10 @@ int main(int argc, char** argv)
     case ModuleType::DISK_Volume:
         Disk_Volume->Query();
         Disk_Volume->HandleData();
+        break;
+    case ModuleType::QUICK_FIX_ENGINEERING:
+        Win32QuickFix->Query();
+        Win32QuickFix->HandleData();
         break;
     default:
         break;

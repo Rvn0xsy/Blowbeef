@@ -148,6 +148,7 @@
     <ClCompile Include="NetTCPConnection.cpp" />
     <ClCompile Include="process.cpp" />
     <ClCompile Include="Product.cpp" />
+    <ClCompile Include="QuickFixEngineering.cpp" />
     <ClCompile Include="WMIC.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="NetTCPConnection.h" />
     <ClInclude Include="process.h" />
     <ClInclude Include="Product.h" />
+    <ClInclude Include="QuickFixEngineering.h" />
     <ClInclude Include="WMIC.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

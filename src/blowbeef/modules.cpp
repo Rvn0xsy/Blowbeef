@@ -46,6 +46,12 @@ VOID Modules::HandleData()
 	return VOID();
 }
 
+VOID Modules::Release()
+{
+	this->Queryer->Release();
+	return VOID();
+}
+
 int Modules::GetFilterKeyIndex()
 {
 	for (auto& field : this->moduleWMIKey)

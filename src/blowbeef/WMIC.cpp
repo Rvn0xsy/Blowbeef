@@ -57,6 +57,22 @@ TableData* WMIQueryer::WMIGetData(std::vector<std::string> Fields, TableData* Da
     return Data;
 }
 
+VOID WMIQueryer::Release(){
+    if (this->WmiObj->pEnumerator)
+        this->WmiObj->pEnumerator->Release();
+    if (this->WmiObj->pclsObj)
+        this->WmiObj->pclsObj->Release();
+    if (this->WmiObj->pSvc)
+        this->WmiObj->pSvc->Release();
+    if (this->WmiObj->pLoc)
+        this->WmiObj->pLoc->Release();
+    CoUninitialize();
+    if (this->WmiObj) {
+        delete this->WmiObj;
+    }
+    return;
+}
+
 BOOL WMIQueryer::WMIShowTableData(TableData* Data) {
     if (Data->FieldsNum <= 0) {
         LOG(INFO) << "Fields count is NULL.";
@@ -214,16 +230,5 @@ WMIQueryer::WMIQueryer() {
 }
 
 WMIQueryer::~WMIQueryer() {
-    if (this->WmiObj->pEnumerator)
-        this->WmiObj->pEnumerator->Release();
-    if (this->WmiObj->pclsObj)
-        this->WmiObj->pclsObj->Release();
-    if (this->WmiObj->pSvc)
-        this->WmiObj->pSvc->Release();
-    if (this->WmiObj->pLoc)
-        this->WmiObj->pLoc->Release();
-    CoUninitialize();
-    if (this->WmiObj) {
-        delete this->WmiObj;
-    }
+    this->Release();
 }

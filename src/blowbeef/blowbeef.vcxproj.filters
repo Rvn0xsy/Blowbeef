@@ -37,6 +37,9 @@
     <Filter Include="源文件\modules\ipaddress">
       <UniqueIdentifier>{1f3cf85a-2d6d-4927-aa5f-67b637ed0a09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\modules\quick_fix_engineering">
+      <UniqueIdentifier>{e34e73b1-3a42-449c-930d-d8a211b7b960}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="blowbeef.cpp">
@@ -69,6 +72,9 @@
     <ClCompile Include="Product.cpp">
       <Filter>源文件\modules\product</Filter>
     </ClCompile>
+    <ClCompile Include="QuickFixEngineering.cpp">
+      <Filter>源文件\modules\quick_fix_engineering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WMIC.h">
@@ -97,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="Product.h">
       <Filter>源文件\modules\product</Filter>
+    </ClInclude>
+    <ClInclude Include="QuickFixEngineering.h">
+      <Filter>源文件\modules\quick_fix_engineering</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

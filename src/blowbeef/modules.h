@@ -11,6 +11,7 @@ class Modules
 		VOID SetTomlConfigFile(std::string tomlConfigFile);
 		VOID Query();
 		VOID HandleData();
+		VOID Release();
 	protected:
 		int GetFilterKeyIndex();
 		WMIQueryer* Queryer;
