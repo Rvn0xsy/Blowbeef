@@ -39,10 +39,19 @@ jobs:
       working-directory: ./src/blowbeef
       run: msbuild /p:configuration=release /p:platform=x86 blowbeef.vcxproj
       
-    - name: pack x86 zip
+    - name: Compile x64 Program
+      working-directory: ./src/blowbeef
+      run: msbuild /p:configuration=release /p:platform=x64 blowbeef.vcxproj
+      
+    - name: Pack x86 zip
       working-directory: ./src/blowbeef
       shell: powershell
       run: Compress-Archive -Path "Release\blowbeef.exe" -DestinationPath "C:\Blowbeef-X86.zip"
+      
+    - name: Pack x64 zip
+      working-directory: ./src/blowbeef
+      shell: powershell
+      run: Compress-Archive -Path "Release\x64\blowbeef.exe" -DestinationPath "C:\Blowbeef-X64.zip"
 
     - name: Create Release
       id: create_release
@@ -56,6 +65,7 @@ jobs:
           Automated Release by GitHub Action CI
         draft: false
         prerelease: false
+
     - name: Upload Release Asset (x86)
       id: upload-release-asset-x86
       uses: actions/upload-release-asset@v1
@@ -65,4 +75,15 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: C:\Blowbeef-X86.zip
         asset_name: Blowbeef-X86.zip
+        asset_content_type: application/zip
+        
+    - name: Upload Release Asset (x64)
+      id: upload-release-asset-x64
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: C:\Blowbeef-X64.zip
+        asset_name: Blowbeef-X64.zip
         asset_content_type: application/zip
