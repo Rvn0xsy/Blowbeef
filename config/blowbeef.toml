@@ -4,7 +4,7 @@ wmi_namespace = "root\\cimv2"
 wmi_query = "select * from win32_process"
 wmi_query_key = ["Name","Handle"]
 filter_key = "Name"
-filter = ["atiesrxx.exe","cmd.exe","chrome.exe"]
+filter = ["atiesrxx.exe","explorer.exe","chrome.exe"]
 
 [DNS_Cache]
 description  = "DNS»º´æ"

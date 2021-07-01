@@ -65,6 +65,18 @@ int main(int argc, char** argv)
     case ModuleType::All:
         Pr->Query();
         Pr->HandleData();
+        DnsCache->Query();
+        DnsCache->HandleData();
+        Win32_Product->Query();
+        Win32_Product->HandleData();
+        Net_Route->Query();
+        Net_Route->HandleData();
+        Net_IPAddress->Query();
+        Net_IPAddress->HandleData();
+        Net_TCPConnection->Query();
+        Net_TCPConnection->HandleData();
+        Disk_Volume->Query();
+        Disk_Volume->HandleData();
         break;
     case ModuleType::PROCESS:
         Pr->Query();

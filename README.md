@@ -26,7 +26,7 @@ Options:
 - Process->1
 - Product->7
 
-例如想要搜集DNS信息：`blowbeef.exe -m 2`
+DNS_Cache Example: `blowbeef.exe -m 2`
 
 ```
 > blowbeef.exe -m 2 -f C:\blowbeef.toml

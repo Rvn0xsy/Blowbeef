@@ -67,9 +67,9 @@ BOOL WMIQueryer::WMIShowTableData(TableData* Data) {
     }
     std::cout << std::endl;
     Data->RowsNum = Data->Data[0].size();
-    for (size_t i = 0; i < Data->RowsNum; i++)
+    for (int i = 0; i < Data->RowsNum; i++)
     {
-        for (size_t c = 0; c < Data->FieldsNum; c++)
+        for (int c = 0; c < Data->FieldsNum; c++)
         {
             std::cout << Data->Data[c][i] << "\t\t";
         }
