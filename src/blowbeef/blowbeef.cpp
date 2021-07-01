@@ -25,6 +25,17 @@ int main(int argc, char** argv)
     std::string outputFile = "./output.html";
    
     ModuleType moduleType;
+    std::map<std::string, ModuleType> ModuleMap{
+        {"All", ModuleType::All},
+        {"Process", ModuleType::PROCESS},
+        {"DNS_Cache", ModuleType::DNS_Cache} ,
+        {"Product", ModuleType::PRODUCT} ,
+        {"Net_Route", ModuleType::Net_Route} ,
+        {"Net_IPAddress", ModuleType::Net_IPAddress} ,
+        {"Net_TCPConnection", ModuleType::Net_TCPConnection} ,
+        {"DISK_Volume", ModuleType::DISK_Volume} ,
+        {"Quick_Fix", ModuleType::QUICK_FIX_ENGINEERING}
+    };
     app.add_option("-f,--file", tomlConfigFile, "Analysis rules file.")->check(CLI::ExistingFile);
     app.add_option("-o,--output", outputFile, "Output file.")->required();
     
