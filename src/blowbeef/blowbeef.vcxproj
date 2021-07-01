@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="blowbeef.cpp" />
+    <ClCompile Include="BlowbeefOutput.cpp" />
     <ClCompile Include="DISK_Volume.cpp" />
     <ClCompile Include="DNS_Cache.cpp" />
     <ClCompile Include="IPAddress.cpp" />
@@ -152,6 +153,8 @@
     <ClCompile Include="WMIC.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BlowbeefOutput.h" />
+    <ClInclude Include="BlowbeefType.h" />
     <ClInclude Include="DISK_Volume.h" />
     <ClInclude Include="DNS_Cache.h" />
     <ClInclude Include="IPAddress.h" />
