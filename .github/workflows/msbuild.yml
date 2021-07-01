@@ -51,7 +51,7 @@ jobs:
     - name: Pack x64 zip
       working-directory: ./src/blowbeef
       shell: powershell
-      run: Compress-Archive -Path "Release\x64\blowbeef.exe" -DestinationPath "C:\Blowbeef-X64.zip"
+      run: Compress-Archive -Path "x64\Release\blowbeef.exe" -DestinationPath "C:\Blowbeef-X64.zip"
 
     - name: Create Release
       id: create_release
