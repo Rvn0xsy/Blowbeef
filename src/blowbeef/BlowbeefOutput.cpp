@@ -67,24 +67,24 @@ bool BlowbeefOutput::WriteHTML(TableData * Data)
 		LOG(INFO) << "Fields count is NULL.";
 		return FALSE;
 	}
-	this->outfile << "<hr>";
-	this->outfile << "<h1>" << Data->Description << "</h1>";
-	this->outfile << "<table border=\"1\">";
-	this->outfile << "<tr>";
+	this->outfile << "<hr>" << std::endl;
+	this->outfile << "<h1>" << Data->Description << "</h1>" << std::endl;
+	this->outfile << "<table border=\"1\">" << std::endl;
+	this->outfile << "<tr>" << std::endl;
 	for (auto& field : Data->Fields) {
-		this->outfile << "<th>" <<field << "</th>";
+		this->outfile << "<th>" <<field << "</th>" << std::endl;
 	}
 	Data->RowsNum = Data->Data[0].size();
 	for (int i = 0; i < Data->RowsNum; i++)
 	{
-		this->outfile << "<tr>";
+		this->outfile << "<tr>" << std::endl;
 		for (int c = 0; c < Data->FieldsNum; c++)
 		{
-			this->outfile<< "<td>" << Data->Data[c][i] << "</td>";
+			this->outfile<< "<td>" << Data->Data[c][i] << "</td>" << std::endl;
 		}
-		this->outfile << "</tr>";
+		this->outfile << "</tr>" << std::endl;
 	}
-	
+	this->outfile << "</table>" << std::endl;
 	return true;
 }
 

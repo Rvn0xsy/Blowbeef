@@ -19,11 +19,10 @@ class Modules
 		toml::value module;
 		std::string tomlConfigFile;
 		std::string moduleName;
-		std::string moduleDescription;
+		std::string moduleWMIDescription;
 		std::string moduleWMIQuery;
 		std::string moduleWMINameSpace;
 		std::string moduleWMIFilterKey;
-		std::string moduleWMIDescription;
 		std::vector<std::string> moduleWMIKey;
 		std::vector<std::string> moduleWMIFilter;
 		TableData * moduleQueryResultData;

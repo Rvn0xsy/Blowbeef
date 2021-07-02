@@ -10,7 +10,7 @@ TableData* WMIQueryer::WMIGetData(std::vector<std::string> Fields, TableData* Da
     // 获取列名
     Data->Fields = Fields;
     Data->FieldsNum = Fields.size();
-
+    LOG(INFO) <<  "WMIGetData:" << Data->Description;
     std::for_each(Fields.begin(), Fields.end(), [&](std::string& field) {
         std::vector<std::string> values;
         while (this->WmiObj->pEnumerator)
@@ -51,7 +51,7 @@ TableData* WMIQueryer::WMIGetData(std::vector<std::string> Fields, TableData* Da
         }
         Data->Data.push_back(values);
         Data->RowsNum = values.size();
-        LOG(INFO) << "Get Rows : " << Data->RowsNum << std::endl;
+        //LOG(INFO) << "Get Rows : " << Data->RowsNum << std::endl;
         this->WmiObj->pEnumerator->Reset();
     });
     return Data;

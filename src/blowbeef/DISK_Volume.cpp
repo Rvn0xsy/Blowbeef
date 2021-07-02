@@ -17,7 +17,7 @@ VOID DISK_Volume::HandleData() {
 	if (row < 0) {
 		LOG(INFO) << "Not Found Filter Key";
 	}
-	this->Queryer->WMIShowTableData(this->moduleQueryResultData);
+	// this->Queryer->WMIShowTableData(this->moduleQueryResultData);
 	// std::cout << "ROW : " << row << std::endl;
 	auto values = this->moduleQueryResultData->Data.at(row);
 	for (auto& v : values)
