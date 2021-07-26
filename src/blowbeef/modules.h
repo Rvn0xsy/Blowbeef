@@ -6,24 +6,20 @@
 class Modules
 {
 	public:
-		BOOL ParseTomlConfig();
-		VOID SetModuleName(std::string moduleName);
-		VOID SetTomlConfigFile(std::string tomlConfigFile);
 		VOID Query();
-		VOID HandleData();
 		VOID Release();
 		TableData* GetData();
 	protected:
-		int GetFilterKeyIndex();
+		VOID SetModuleName(std::string str);
+		VOID SetWMIDescription(std::string str);
+		VOID SetWMIQuery(std::string str);
+		VOID SetWMINameSpace(std::string str);
 		WMIQueryer* Queryer;
 		toml::value module;
-		std::string tomlConfigFile;
 		std::string moduleName;
 		std::string moduleWMIDescription;
 		std::string moduleWMIQuery;
 		std::string moduleWMINameSpace;
-		std::string moduleWMIFilterKey;
 		std::vector<std::string> moduleWMIKey;
-		std::vector<std::string> moduleWMIFilter;
 		TableData * moduleQueryResultData;
 };

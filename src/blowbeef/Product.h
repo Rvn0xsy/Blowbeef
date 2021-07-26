@@ -4,7 +4,6 @@ class Product :
     public Modules
 {
 public:
-    Product(std::string tomlConfigFile);
-    VOID HandleData();
+    Product();
 };
 

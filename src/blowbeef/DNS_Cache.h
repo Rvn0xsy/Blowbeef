@@ -3,7 +3,6 @@
 class DNS_Cache : public Modules
 {
 public:
-	DNS_Cache(std::string tomlConfigFile);
-	VOID HandleData();
+	DNS_Cache();
 };
 

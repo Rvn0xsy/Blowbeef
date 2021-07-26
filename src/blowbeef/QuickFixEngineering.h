@@ -5,7 +5,6 @@ class QuickFixEngineering :
 {
 
 public:
-    QuickFixEngineering(std::string tomlConfigFile);
-    VOID HandleData();
+    QuickFixEngineering();
 };
 

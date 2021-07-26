@@ -4,7 +4,6 @@ class NetTCPConnection :
     public Modules
 {
 public:
-    NetTCPConnection(std::string tomlConfigFile);
-    VOID HandleData();
+    NetTCPConnection();
 };
 

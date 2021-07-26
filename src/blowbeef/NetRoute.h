@@ -4,7 +4,6 @@ class NetRoute :
     public Modules
 {
 public:
-    NetRoute(std::string tomlConfigFile);
-    VOID HandleData();
+    NetRoute();
 };
 
