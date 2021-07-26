@@ -30,6 +30,8 @@ jobs:
           .\vcpkg\vcpkg.exe install easyloggingpp:x64-windows
           .\vcpkg\vcpkg.exe install toml11:x86-windows
           .\vcpkg\vcpkg.exe install toml11:x64-windows
+          .\vcpkg\vcpkg.exe install jsoncpp:x86-windows
+          .\vcpkg\vcpkg.exe install jsoncpp:x64-windows
           .\vcpkg\vcpkg.exe integrate install
 
     - name: Enable Developer Command Prompt
@@ -46,12 +48,12 @@ jobs:
     - name: Pack x86 zip
       working-directory: ./src/blowbeef
       shell: powershell
-      run: Compress-Archive -Path "Release\blowbeef.exe" -DestinationPath "C:\Blowbeef-X86.zip"
+      run: Compress-Archive -Path "Release\" -DestinationPath "C:\Blowbeef-X86.zip"
       
     - name: Pack x64 zip
       working-directory: ./src/blowbeef
       shell: powershell
-      run: Compress-Archive -Path "x64\Release\blowbeef.exe" -DestinationPath "C:\Blowbeef-X64.zip"
+      run: Compress-Archive -Path "x64\Release\" -DestinationPath "C:\Blowbeef-X64.zip"
 
     - name: Create Release
       id: create_release
