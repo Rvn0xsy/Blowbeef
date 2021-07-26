@@ -14,7 +14,7 @@ BOOL Modules::ParseTomlConfig()
 		this->moduleWMIFilter = toml::find<std::vector<std::string>>(this->module, "filter");
 		this->moduleWMINameSpace = toml::find_or<std::string>(this->module, "wmi_namespace","root\\cimv2");
 		this->moduleWMIQuery = toml::find<std::string>(this->module, "wmi_query");
-		this->moduleDescription = toml::find<std::string>(this->module, "description");
+		this->moduleWMIDescription = toml::find<std::string>(this->module, "description");
 		this->moduleWMIFilterKey = toml::find_or<std::string>(this->module, "filter_key","");
 	}
 	catch (std::exception e) {
@@ -32,13 +32,14 @@ VOID Modules::SetTomlConfigFile(std::string tomlConfigFile)
 
 VOID Modules::Query()
 {
+	this->Queryer = new WMIQueryer;
 	this->moduleQueryResultData = new TableData;
 	this->moduleQueryResultData->Description = this->moduleWMIDescription;
-	this->Queryer = new WMIQueryer;
+	LOG(INFO) << "Handle :" << this->moduleQueryResultData->Description;
 	Queryer->OpenNamespace(this->moduleWMINameSpace);
 	Queryer->WMIQuery(this->moduleWMIQuery);
 	this->moduleQueryResultData = Queryer->WMIGetData(this->moduleWMIKey, this->moduleQueryResultData);
-	LOG(INFO) << "Get Rows Data :" << this->moduleQueryResultData->Data.size();
+	// LOG(INFO) << "Get Rows Data :" << this->moduleQueryResultData->Data.size();
 	return VOID();
 }
 

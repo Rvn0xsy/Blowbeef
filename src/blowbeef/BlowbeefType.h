@@ -7,16 +7,17 @@ enum class BlowbeefOutputType
 {
 	CSV,
 	HTML,
-	LOG
+	LOG,
+    JSON,
 };
 
 struct TableData
 {
-	std::string Description;
 	int FieldsNum;
 	int RowsNum;
 	std::vector<std::string> Fields;
 	std::vector<std::vector<std::string>> Data;
+    std::string Description;
 };
 
 
