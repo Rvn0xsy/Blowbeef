@@ -3,7 +3,7 @@
 #include <fstream>
 #include <easylogging++.h>
 #include "BlowbeefType.h"
-
+#include "json/json.h"
 
 
 class BlowbeefOutput
@@ -19,7 +19,9 @@ private:
 	std::string outFileName;
 	std::ofstream  outfile;
 	BlowbeefOutputType FileType;
+	Json::Value root;
 	bool WriteHTML(TableData* Data);
+	bool WriteJson(TableData* Data);
 	bool WriteHead();
 	bool WriteFoot();
 };

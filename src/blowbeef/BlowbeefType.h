@@ -7,7 +7,8 @@ enum class BlowbeefOutputType
 {
 	CSV,
 	HTML,
-	LOG
+	LOG,
+    JSON,
 };
 
 struct TableData

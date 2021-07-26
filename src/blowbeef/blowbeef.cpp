@@ -42,7 +42,7 @@ int main(int argc, char** argv)
     app.add_option("-m,--modules", moduleType, "Module name.")->required()->transform(CLI::CheckedTransformer(ModuleMap, CLI::ignore_case));
     
     CLI11_PARSE(app, argc, argv);
-    BlowbeefOutput OutPuter(outputFile, BlowbeefOutputType::HTML);
+    BlowbeefOutput OutPuter(outputFile, BlowbeefOutputType::JSON);
 
     Process* Pr = new Process(tomlConfigFile);
     DNS_Cache* DnsCache = new DNS_Cache(tomlConfigFile);
